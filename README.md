@@ -1,7 +1,7 @@
 # EspTouch
 
 [![CI Status](http://img.shields.io/travis/liubiqu/EspTouch.svg?style=flat)](https://travis-ci.org/liubiqu/EspTouch)
-[![Version](https://img.shields.io/badge/pod-v3.7.1-blue.svg)](http://cocoapods.org/pods/EspTouch)
+[![Version](https://img.shields.io/badge/pod-v3.7.1-blue.svg?style=flat)](http://cocoapods.org/pods/EspTouch)
 [![License](https://img.shields.io/cocoapods/l/EspTouch.svg?style=flat)](http://cocoapods.org/pods/EspTouch)
 [![Platform](https://img.shields.io/cocoapods/p/EspTouch.svg?style=flat)](http://cocoapods.org/pods/EspTouch)
 
@@ -19,8 +19,11 @@ it, simply add the following line to your Podfile:
 ```ruby
 pod "EspTouch"
 ```
-v0.3.7.1
+## CHANGELOG
+==================================v0.3.7.1==================================
 
+Remove deprecated constructor of EsptouchTask
+Remove EsptouchTask's aes constructor, device doesn't support currently
 
 ## Author
 
