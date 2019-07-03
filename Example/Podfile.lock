@@ -1,0 +1,16 @@
+PODS:
+  - EspTouch (3.5.4)
+
+DEPENDENCIES:
+  - EspTouch (from `../`)
+
+EXTERNAL SOURCES:
+  EspTouch:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  EspTouch: 0cd13729037eb6f20e9377445cb5b036a8df2bde
+
+PODFILE CHECKSUM: b5c79f2be1b40b3579cf0383d40d1c9c20920de2
+
+COCOAPODS: 1.7.1

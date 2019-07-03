@@ -84,13 +84,11 @@
         if (aes == nil) {
             self._apSsid = [ESP_ByteUtil getBytesByNSString:apSsid];
             self._apPwd = [ESP_ByteUtil getBytesByNSString:apPwd];
-            self._apBssid = [ESP_ByteUtil getBytesByNSString:apBssid];
         } else {
             self._apSsid = [aes AES128EncryptData:[ESP_ByteUtil getBytesByNSString:apSsid]];
             self._apPwd = [aes AES128EncryptData:[ESP_ByteUtil getBytesByNSString:apPwd]];
-            self._apBssid = [aes AES128EncryptData:[ESP_ByteUtil getBytesByNSString:apBssid]];
         }
-        
+        self._apBssid = [ESP_NetUtil parseBssid2bytes:apBssid];
         self._parameter = [[ESPTaskParameter alloc]init];
         
         // check whether IPv4 and IPv6 is supported
@@ -155,11 +153,6 @@
         [_self._parameter setWaitUdpTotalMillisecond:timeoutMillisecond];
     }
     return _self;
-}
-
-- (id) initWithApSsid: (NSString *)apSsid andApBssid: (NSString *) apBssid andApPwd: (NSString *)apPwd andIsSsidHiden: (BOOL) isSsidHidden andTimeoutMillisecond: (int) timeoutMillisecond
-{
-    return [self initWithApSsid:apSsid andApBssid:apBssid andApPwd:apPwd andTimeoutMillisecond:timeoutMillisecond];
 }
 
 - (void) __putEsptouchResultIsSuc: (BOOL) isSuc AndBssid: (NSString *)bssid AndInetAddr:(NSData *)inetAddr
@@ -512,6 +505,10 @@
 - (void) setEsptouchDelegate: (NSObject<ESPTouchDelegate> *) esptouchDelegate
 {
     self._esptouchDelegate = esptouchDelegate;
+}
+
+- (void)setPackageBroadcast:(BOOL)broadcast {
+    [self._parameter setBroadcast:broadcast];
 }
 
 @end

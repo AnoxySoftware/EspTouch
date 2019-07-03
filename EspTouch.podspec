@@ -1,9 +1,19 @@
 Pod::Spec.new do |s|
   s.name             = 'EspTouch'
-  s.version          = '3.5.4'
+  s.version          = '3.7.1'
   s.summary          = 'EspTouch Espressif wifi module，more see:https://github.com/EspressifApp/EsptouchForIOS.'
   s.description      = <<-DESC
-==================================v0.3.5.4  2018-04-09====================== 
+  
+==================================v0.3.7.1======================
+1. Remove deprecated constructor of EsptouchTask
+2. Remove EsptouchTask's aes constructor, device doesn't support currently
+==================================v0.3.7.0======================
+1. Add option to select Broadcast or Multicast
+==================================v0.3.6.1======================
+1. Modify bssid post sequence
+==================================v0.3.6.0======================
+1. Post bssid data for device
+==================================v0.3.5.4======================
 1. Support AES128 encryption
 2. Usage:
 
